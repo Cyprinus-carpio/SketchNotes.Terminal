@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="SketchNotes.Terminal.Pages.RunPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SketchNotes.Terminal"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Loaded="Page_Loaded">
+
+    <Grid Margin="56,0,56,8"
+          MaxWidth="1000">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <TextBlock Style="{StaticResource TitleTextBlockStyle}"
+                   Margin="0,28,0,28"
+                   Grid.Row="0"
+                   Text="执行命令" />
+        <TextBox x:Name="OutputTextBox"
+                 Grid.Row="1"
+                 TextWrapping="Wrap"
+                 VerticalAlignment="Stretch"
+                 HorizontalAlignment="Stretch"
+                 Header="输出摘要"
+                 IsReadOnly="True" />
+        <TextBox x:Name="ExitCodeTextBox"
+                 Grid.Row="2"
+                 Margin="0,8,0,0"
+                 VerticalAlignment="Stretch"
+                 HorizontalAlignment="Stretch"
+                 Header="线程返回值"
+                 IsReadOnly="True" />
+        <Button x:Name="AdminBtn"
+                Margin="0,28,0,0"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Height="36"
+                ToolTipService.ToolTip="以管理员身份重新执行"
+                Click="AdminBtn_Click">
+            <StackPanel Orientation="Horizontal">
+                <FontIcon FontSize="16"
+                          Glyph="&#xE7EF;" />
+                <TextBlock Text="以管理员身份重新执行"
+                           Margin="8,0,0,0" />
+            </StackPanel>
+        </Button>
+    </Grid>
+</Page>

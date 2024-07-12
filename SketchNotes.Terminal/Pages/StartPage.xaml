@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="SketchNotes.Terminal.Pages.StartPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SketchNotes.Terminal.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:CommunityToolkit.WinUI.Controls"
+    xmlns:ui="using:CommunityToolkit.WinUI"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <Style x:Key="SettingsSectionHeaderTextBlockStyle"
+               BasedOn="{StaticResource BodyStrongTextBlockStyle}"
+               TargetType="TextBlock">
+            <Style.Setters>
+                <Setter Property="Margin"
+                        Value="0,28,0,4" />
+            </Style.Setters>
+        </Style>
+    </Page.Resources>
+
+    <StackPanel VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                Orientation="Horizontal">
+        <Image Width="200"
+               Height="200"
+               Source="ms-appx:///Assets/StartPage.png" />
+        <StackPanel Margin="32,0,0,0"
+                    VerticalAlignment="Center">
+            <TextBlock Style="{ThemeResource TitleTextBlockStyle}"
+                       Text="不受支持的操作" />
+            <TextBlock Text="请以正确的 URI 或 SketchNotes 启动此应用。"
+                       Margin="0,8,0,0" />
+            <TextBlock Style="{StaticResource SettingsSectionHeaderTextBlockStyle}"
+                       Text="帮助" />
+            <controls:SettingsCard x:Name="SettingsSettingsCard"
+                                   Header="设置"
+                                   Description="修改应用首选项"
+                                   HeaderIcon="{ui:FontIcon Glyph=&#xE713;}"
+                                   IsClickEnabled="True"
+                                   Click="SettingsSettingsCard_Click" />
+            <controls:SettingsCard x:Name="HelpSettingsCard"
+                                   Header="帮助"
+                                   Description="查看详细的 SketchNotes 终端 URI 用法"
+                                   HeaderIcon="{ui:FontIcon Glyph=&#xE9CE;}"
+                                   Margin="0,4,0,0"
+                                   IsClickEnabled="True"
+                                   Click="HelpSettingsCard_Click" />
+        </StackPanel>
+    </StackPanel>
+</Page>

@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "SketchNotes.Terminal (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "SketchNotes.Terminal (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
